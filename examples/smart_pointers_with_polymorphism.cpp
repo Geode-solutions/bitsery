@@ -172,8 +172,33 @@ namespace bitsery {
         };
 
         template<>
+        struct PolymorphicClassName<Shape> {
+            static const char* name;
+        };
+        const char* PolymorphicClassName<Shape>::name = "Shape";
+
+        template<>
+        struct PolymorphicClassName<Circle> {
+            static const char* name;
+        };
+        const char* PolymorphicClassName<Circle>::name = "Circle";
+
+        template<>
+        struct PolymorphicClassName<Rectangle> {
+            static const char* name;
+        };
+        const char* PolymorphicClassName<Rectangle>::name = "Rectangle";
+
+        template<>
         struct PolymorphicBaseClass<Rectangle> : PolymorphicDerivedClasses<RoundedRectangle> {
         };
+
+        template<>
+        struct PolymorphicClassName<RoundedRectangle> {
+            static const char* name;
+        };
+        const char* PolymorphicClassName<RoundedRectangle>::name = "RoundedRectangle";
+
     }
 }
 
