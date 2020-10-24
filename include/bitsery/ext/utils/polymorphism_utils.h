@@ -168,8 +168,8 @@ namespace bitsery {
                     if (it == _baseToDerivedArray.end()) {
                         it = _baseToDerivedArray.emplace(key.baseHash, Maps{}).first;
                     }
-                    it->second.name2derived.emplace(PolymorphicClassName<TDerived>::name, key.derivedHash);
-                    it->second.derived2name.emplace(key.derivedHash, PolymorphicClassName<TDerived>::name);
+                    it->second.name2derived.emplace(name, key.derivedHash);
+                    it->second.derived2name.emplace(key.derivedHash, name);
                 }
             }
 
